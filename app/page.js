@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import Summary from './components/layout/Summary'
+import Summary from './components/layout/summary/Summary'
 import CurrentPage from './components/layout/CurrentPage'
 
 export default function Home() {
