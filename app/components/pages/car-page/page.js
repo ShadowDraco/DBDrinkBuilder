@@ -14,8 +14,6 @@ export default function CarPage({
   const [comment, setComment] = useState(null)
   const [error, setError] = useState('')
 
-  console.log(selectedColor, selectedCar, comment)
-
   const updateOrderInformation = () => {
     setComment(commentRef.current.value)
     setOrderInformation({
@@ -54,7 +52,7 @@ export default function CarPage({
   const cars = ['Car', 'SUV', 'Truck', 'Van', 'Wagon', 'Custom']
 
   return (
-    <div className='bg-zinc-95 p-2 flex h-5/6'>
+    <div className='bg-zinc-95 p-2 flex'>
       <div className='w-full bg-zinc-950'>
         <p className='text-lg text-gray-300 p-2'>Vehicle</p>
         <SelectColor
@@ -67,11 +65,12 @@ export default function CarPage({
           selectedCar={selectedCar}
           setSelectedCar={setSelectedCar}
         />
+
         <div className='p-2'>
           <p className='text-gray-400'>Comment</p>
           <input
             ref={commentRef}
-            className='bg-black text-gray-300 p-2 rounded-md'
+            className='bg-black text-gray-300 p-2 rounded-md mt-2'
             placeholder='Enter Comment'
           />
         </div>

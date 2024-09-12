@@ -1,42 +1,49 @@
 import React from 'react'
+import Image from 'next/image'
 
 export default function SelectCar({ selectedCar, setSelectedCar, cars }) {
   const icons = [
-    <img
+    <Image
+      key='sedan'
       width='50'
       height='50'
       src='https://img.icons8.com/ffffff/ios/50/sedan.png'
       alt='sedan'
     />,
-    <img
+    <Image
+      key='station-wagon'
       width='50'
       height='50'
       src='https://img.icons8.com/ffffff/ios/50/station-wagon.png'
       alt='station-wagon'
       className='m-auto'
     />,
-    <img
+    <Image
+      key='pickup'
       width='50'
       height='50'
       src='https://img.icons8.com/ffffff/ios/50/pickup.png'
       alt='pickup'
       className='m-auto'
     />,
-    <img
+    <Image
+      key='van'
       width='50'
       height='50'
       src='https://img.icons8.com/ffffff/ios/50/van.png'
       alt='van'
       className='m-auto'
     />,
-    <img
+    <Image
+      key='wagon'
       width='96'
       height='96'
       src='https://img.icons8.com/ffffff/external-goofy-line-kerismaker/96/external-Wagon-transportation-obvious-line-kerismaker.png'
       alt='external-Wagon-transportation-obvious-line-kerismaker'
       className='m-auto'
     />,
-    <img
+    <Image
+      key='horse'
       width='50'
       height='50'
       src='https://img.icons8.com/ffffff/ios/50/horse.png'

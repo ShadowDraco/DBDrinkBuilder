@@ -2,6 +2,13 @@
 
 Dutch Bros Training is comprehensive but it needs a drink builder! Come here to practice making drinks ;)
 
+## Features
+
+- 1:1 replica of the DutchBros Order Builder (mostly)
+- Helps trainees develop good habits
+- Helps trainees learn the menu, take orders, and create drinks
+- Beautiful UI
+
 ## Getting Started
 
 First, run the development server:
