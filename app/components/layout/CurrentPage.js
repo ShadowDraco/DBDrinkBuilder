@@ -10,6 +10,7 @@ export default function CurrentPage({
   setOrderInformation,
   setDrinks,
   setCurrentDrink,
+  currentDrink,
 }) {
   const [currentPage, setCurrentPage] = useState(0)
   const [orderInformationSaved, setOrderInformationSaved] = useState(false)
@@ -29,6 +30,8 @@ export default function CurrentPage({
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           orderInformationSaved={orderInformationSaved}
+          currentDrink={currentDrink}
+          setCurrentDrink={setCurrentDrink}
         />
       )
     case 'hot-page':
@@ -71,6 +74,7 @@ export default function CurrentPage({
           orderInformationSaved={orderInformationSaved}
           setOrderInformationSaved={setOrderInformationSaved}
           setOrderInformation={setOrderInformation}
+          setCurrentDrink={setCurrentDrink}
         />
       )
   }

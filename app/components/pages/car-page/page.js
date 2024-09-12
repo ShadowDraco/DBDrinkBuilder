@@ -12,6 +12,7 @@ export default function CarPage({
   setOrderInformation,
   currentPage,
   setCurrentPage,
+  setCurrentDrink,
 }) {
   const [selectedColor, setSelectedColor] = useState(null)
   const [selectedCar, setSelectedCar] = useState(null)
@@ -33,6 +34,14 @@ export default function CarPage({
       commentRef.current.value
     ) {
       setOrderInformationSaved(true)
+      setCurrentDrink({
+        flavors: {},
+        sweet: {},
+        toppings: {},
+        temp: 0,
+        size: 1,
+        name: '',
+      })
       setError('')
     } else {
       setError('Add all info before saving!')

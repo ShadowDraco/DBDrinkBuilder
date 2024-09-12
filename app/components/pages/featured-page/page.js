@@ -1,11 +1,14 @@
 'use client'
-import React, { useState } from 'react'
+import React, { createRef, useState } from 'react'
 import PageTabs from '../../layout/PageTabs'
+import DrinkSizes from '../../layout/DrinkSizes'
 
 export default function FeaturedPage({
   orderInformationSaved,
   currentPage,
   setCurrentPage,
+  currentDrink,
+  setCurrentDrink,
 }) {
   const [error, setError] = useState('')
 
@@ -20,7 +23,10 @@ export default function FeaturedPage({
 
         <div className='flex'>
           <div className='w-full bg-zinc-950'>
-            <p className='text-lg text-gray-300 p-2'>Drink Sizes Here</p>
+            <DrinkSizes
+              currentDrink={currentDrink}
+              setCurrentDrink={setCurrentDrink}
+            />
 
             <div className='p-2'>
               <p className='text-gray-400'>Drinks Here</p>
