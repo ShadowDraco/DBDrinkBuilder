@@ -6,7 +6,11 @@ import IcedPage from '../pages/iced-page/page'
 import BlendedPage from '../pages/blended-page/page'
 import MiscPage from '../pages/misc-page/page'
 
-export default function CurrentPage({ currentPage, setOrderInformationSaved }) {
+export default function CurrentPage({
+  currentPage,
+  setOrderInformationSaved,
+  setOrderInformation,
+}) {
   const pages = [
     'car-page',
     'featured-page',
@@ -17,7 +21,12 @@ export default function CurrentPage({ currentPage, setOrderInformationSaved }) {
   ]
   switch (pages[currentPage]) {
     case 'car-page':
-      return <CarPage setOrderInformationSaved={setOrderInformationSaved} />
+      return (
+        <CarPage
+          setOrderInformationSaved={setOrderInformationSaved}
+          setOrderInformation={setOrderInformation}
+        />
+      )
     case 'featured-page':
       return <FeaturedPage />
     case 'hot-page':
@@ -29,6 +38,11 @@ export default function CurrentPage({ currentPage, setOrderInformationSaved }) {
     case 'misc-page':
       return <MiscPage />
     default:
-      return <CarPage setOrderInformationSaved={setOrderInformationSaved} />
+      return (
+        <CarPage
+          setOrderInformationSaved={setOrderInformationSaved}
+          setOrderInformation={setOrderInformation}
+        />
+      )
   }
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 
-export default function SelectCar({selectedCar, setSelectedCar}) {
-  const cars = ['Car', 'SUV', 'Truck', 'Van', 'Wagon', 'Custom']
+export default function SelectCar({ selectedCar, setSelectedCar, cars }) {
   const icons = [
     <img
       width='50'
@@ -56,7 +55,12 @@ export default function SelectCar({selectedCar, setSelectedCar}) {
             >
               {' '}
               <button
-                className={`bg-zinc-950 hover:bg-zinc-900 w-24 text-white font-bold py-2 px-4 rounded`}
+                className={`bg-zinc-950 hover:bg-zinc-900 w-24 text-white font-bold py-2 px-4 rounded ${
+                  selectedCar == index ? 'bg-zinc-800' : ''
+                }`}
+                onClick={() => {
+                  setSelectedCar(index)
+                }}
               >
                 <div className=''>
                   {car}

@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Summary from './components/layout/Summary'
 import CurrentPage from './components/layout/CurrentPage'
 import PageTabs from './components/layout/PageTabs'
