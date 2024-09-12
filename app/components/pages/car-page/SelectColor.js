@@ -10,7 +10,7 @@ export default function SelectColor({
       <p className='text-gray-400'>Select Vehicle Color</p>
       <div className='grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 my-2'>
         {colors.map((color, index) => {
-          const borderColor = color.toLowerCase()
+          const borderColor = `border-${color.toLowerCase()}-5000`
 
           return (
             <div
@@ -18,7 +18,7 @@ export default function SelectColor({
               key={`${color}-${index}`}
             >
               <button
-                className={`bg-zinc-950 hover:bg-zinc-900 w-24 text-white font-bold py-2 px-4 border-b-4 border-${borderColor}-500 hover:border-${borderColor}-700 rounded ${
+                className={`bg-zinc-950 hover:bg-zinc-900 w-24 text-white font-bold py-2 px-4 border-b-4 ${borderColor} rounded ${
                   selectedColor == index ? 'bg-gray-800' : ''
                 }`}
                 onClick={() => {
