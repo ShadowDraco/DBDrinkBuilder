@@ -15,8 +15,8 @@ export default function Summary() {
   const [selectedPerson, setSelectedPerson] = useState(people[0])
 
   return (
-    <div className='w-1/3'>
-      <div className='topSummary flex gap-3 w-full align-center p-2'>
+    <div className='w-1/3 bg-zinc-950'>
+      <div className='topSummary flex gap-3 w-full align-center p-2 bg-zinc-1000'>
         <button className='btn'>
           <Bars3Icon className='size-8 text-white-500 m-auto' />
         </button>

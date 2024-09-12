@@ -31,3 +31,34 @@ body {
     text-wrap: balance;
   }
 }
+
+.bg-zinc-1000 {
+  background-color: rgb(7, 7, 7);
+}
+
+.border-white-500 {
+  border-color: white;
+}
+
+.border-silver-500 {
+  border-color: rgb(192, 192, 192);
+}
+
+.border-black-500 {
+  border-color: rgb(0, 0, 0);
+}
+
+.border-gold-500 {
+  border-color: rgb(223, 200, 0);
+}
+
+.border-brown-500 {
+  border-color: rgb(168, 115, 16);
+}
+
+.border-custom-500 {
+  border-image: linear-gradient(to right, #3acfd5 0%, #b702ff 100%) 1;
+}
+.border-white-500 {
+  border-color: white;
+}
