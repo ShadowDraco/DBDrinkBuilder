@@ -4,6 +4,8 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, ChevronDownIcon } from '@heroicons/react/24/solid'
 import { useState } from 'react'
 
+import Author from './Author'
+
 const people = [
   { id: 0, name: 'Patty Gregson' },
   { id: 1, name: 'AJ Woodruff' },
@@ -15,7 +17,7 @@ export default function Summary() {
   const [selectedPerson, setSelectedPerson] = useState(people[0])
 
   return (
-    <div className='w-1/3 bg-zinc-950 h-full border-r-2 border-black'>
+    <div className='w-1/4 bg-zinc-950 min-h-screen border-r-2 border-black flex flex-col justify-between'>
       <div className='topSummary flex gap-3 w-full align-center p-2 bg-zinc-1000'>
         <button className='btn'>
           <Bars3Icon className='size-8 text-white-500 m-auto' />
@@ -55,6 +57,7 @@ export default function Summary() {
           </MenuItems>
         </Menu>
       </div>
+      <Author />
     </div>
   )
 }

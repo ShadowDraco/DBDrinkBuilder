@@ -19,7 +19,7 @@ export default function SelectColor({
             >
               <button
                 className={`bg-zinc-950 hover:bg-zinc-900 w-24 text-white font-bold py-2 px-4 border-b-4 border-${borderColor}-500 hover:border-${borderColor}-700 rounded ${
-                  selectedColor == index ? 'bg-zinc-800' : ''
+                  selectedColor == index ? 'bg-gray-800' : ''
                 }`}
                 onClick={() => {
                   setSelectedColor(index)
