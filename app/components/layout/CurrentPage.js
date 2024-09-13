@@ -23,6 +23,34 @@ export default function CurrentPage({
     'blended-page',
     'misc-page',
   ]
+
+  const dutchClassics = [
+    { name: 'Americano' },
+    { name: 'Mocha' },
+    { name: 'Latte' },
+    { name: 'Breve' },
+    { name: 'Oat Milk Latte' },
+  ]
+
+  const dutchFaves = [
+    { name: 'Kicker' },
+    { name: 'Caramelizer' },
+    { name: 'Annihilator' },
+    { name: 'Golden Eagle' },
+    { name: 'Cocomo' },
+    { name: '911' },
+    { name: 'Double Torture' },
+    { name: 'White Mocha' },
+    { name: "Vanilla Latte"}
+  ]
+
+  const dutchChais = [
+    { name: 'Chai' },
+    { name: 'Golden Eagle Chai' },
+    { name: 'Christmas Morning Chai' },
+    { name: 'Horchata Chai' },
+    { name: 'White Zombie Chai' },
+  ]
   switch (pages[currentPage]) {
     case 'featured-page':
       return (
@@ -32,6 +60,9 @@ export default function CurrentPage({
           orderInformationSaved={orderInformationSaved}
           currentDrink={currentDrink}
           setCurrentDrink={setCurrentDrink}
+          dutchFaves={dutchFaves}
+          dutchClassics={dutchClassics}
+          dutchChais={dutchChais}
         />
       )
     case 'hot-page':
@@ -40,6 +71,9 @@ export default function CurrentPage({
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           orderInformationSaved={orderInformationSaved}
+          dutchFaves={dutchFaves}
+          dutchClassics={dutchClassics}
+          dutchChais={dutchChais}
         />
       )
     case 'iced-page':
@@ -48,6 +82,9 @@ export default function CurrentPage({
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           orderInformationSaved={orderInformationSaved}
+          dutchFaves={dutchFaves}
+          dutchClassics={dutchClassics}
+          dutchChais={dutchChais}
         />
       )
     case 'blended-page':
@@ -56,6 +93,9 @@ export default function CurrentPage({
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           orderInformationSaved={orderInformationSaved}
+          dutchFaves={dutchFaves}
+          dutchClassics={dutchClassics}
+          dutchChais={dutchChais}
         />
       )
     case 'misc-page':
@@ -64,6 +104,9 @@ export default function CurrentPage({
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           orderInformationSaved={orderInformationSaved}
+          dutchFaves={dutchFaves}
+          dutchClassics={dutchClassics}
+          dutchChais={dutchChais}
         />
       )
     default:
@@ -75,6 +118,7 @@ export default function CurrentPage({
           setOrderInformationSaved={setOrderInformationSaved}
           setOrderInformation={setOrderInformation}
           setCurrentDrink={setCurrentDrink}
+          dutchChais={dutchChais}
         />
       )
   }

@@ -1,7 +1,6 @@
 'use client'
-import React, { createRef, useState } from 'react'
-import PageTabs from '../../layout/PageTabs'
-import DrinkSizes from '../../layout/DrinkSizes'
+import React, { useState } from 'react'
+import DrinkPage from '../DrinkPage'
 
 export default function FeaturedPage({
   orderInformationSaved,
@@ -12,28 +11,29 @@ export default function FeaturedPage({
 }) {
   const [error, setError] = useState('')
 
+  const featuredDrinks = [
+    {
+      name: 'Seasonal',
+      theme: 'autumn',
+      drinks: [
+        { name: 'CPB Americano' },
+        { name: 'CPB Mocha' },
+        { name: 'CPB Latte' },
+        { name: 'CPB Breve' },
+        { name: 'CPB Oat Milk Latte' },
+        { name: 'CPB Hot Protein Latte' },
+      ],
+    },
+  ]
+
   return (
-    <div className='bg-zinc-950 p-2 min-h-screen w-full'>
-      <div className=''>
-        <PageTabs
-          setCurrentPage={setCurrentPage}
-          currentPage={currentPage}
-          orderInformationSaved={orderInformationSaved}
-        />
-
-        <div className='flex'>
-          <div className='w-full bg-zinc-950'>
-            <DrinkSizes
-              currentDrink={currentDrink}
-              setCurrentDrink={setCurrentDrink}
-            />
-
-            <div className='p-2'>
-              <p className='text-gray-400'>Drinks Here</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <DrinkPage
+      orderInformationSaved={orderInformationSaved}
+      currentPage={currentPage}
+      setCurrentPage={setCurrentPage}
+      currentDrink={currentDrink}
+      setCurrentDrink={setCurrentDrink}
+      drinksAndCategories={featuredDrinks}
+    />
   )
 }

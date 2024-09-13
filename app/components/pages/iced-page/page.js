@@ -1,33 +1,50 @@
 'use client'
-import React, { useState, useRef } from 'react'
-import PageTabs from '../../layout/PageTabs'
+import React, { useState } from 'react'
+import DrinkPage from '../DrinkPage'
 
 export default function IcedPage({
   orderInformationSaved,
   currentPage,
   setCurrentPage,
+  currentDrink,
+  setCurrentDrink,
+  dutchFaves,
+  dutchClassics,
+  dutchChais,
 }) {
   const [error, setError] = useState('')
 
+  const icedDrinks = [
+    {
+      name: 'Iced Classics*',
+      theme: 'ice',
+      drinks: [...dutchClassics, { name: 'Iced Protein Latte' }],
+    },
+    {
+      name: 'Iced Dutch Faves',
+      theme: 'winter',
+      drinks: [
+        ...dutchFaves,
+        { name: 'Iced Salted Caramel Protein Latte' },
+        { name: 'Iced Salted caramel Protein Mocha' },
+        { name: 'Iced Creamy Van Prot Latte' },
+      ],
+    },
+    {
+      name: 'Iced Chais',
+      theme: 'pansy',
+      drinks: [...dutchChais, { name: 'Iced Strawberry Horchata Chai' }],
+    },
+  ]
+
   return (
-    <div className='bg-zinc-950 p-2 min-h-screen w-full'>
-      <div className=''>
-        <PageTabs
-          setCurrentPage={setCurrentPage}
-          currentPage={currentPage}
-          orderInformationSaved={orderInformationSaved}
-        />
-
-        <div className='flex'>
-          <div className='w-full bg-zinc-950'>
-            <p className='text-lg text-gray-300 p-2'>Drink Sizes Here</p>
-
-            <div className='p-2'>
-              <p className='text-gray-400'>Drinks Here</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <DrinkPage
+      orderInformationSaved={orderInformationSaved}
+      currentPage={currentPage}
+      setCurrentPage={setCurrentPage}
+      currentDrink={currentDrink}
+      setCurrentDrink={setCurrentDrink}
+      drinksAndCategories={icedDrinks}
+    />
   )
 }
