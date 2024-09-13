@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, ChevronUpIcon } from '@heroicons/react/24/solid'
+import { ChevronUpIcon } from '@heroicons/react/24/solid'
 
 const total = '$0.00'
 const options = [
@@ -54,11 +54,11 @@ export default function BottomSummary() {
             </div>
           </MenuItems>
         </Menu>
-        <button class='flex-1 rounded px-5 py-2.5 overflow-hidden group bg-green-600 relative hover:bg-gradient-to-r hover:from-green-600 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300'>
-          <span class='absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease'></span>
+        <button className='flex-1 rounded px-5 py-2.5 overflow-hidden group bg-green-600 relative hover:bg-gradient-to-r hover:from-green-600 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300'>
+          <span className='absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease'></span>
           <div className='flex justify-between'>
-            <span class='relative font-bold'>Total:</span>
-            <span class='relative font-bold'>{total}</span>
+            <span className='relative font-bold'>Total:</span>
+            <span className='relative font-bold'>{total}</span>
           </div>
         </button>
       </div>

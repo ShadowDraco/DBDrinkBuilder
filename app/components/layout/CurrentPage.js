@@ -1,77 +1,31 @@
-import React, { useState } from 'react'
-import CarPage from '../pages/car-page/page'
-import FeaturedPage from '../pages/featured-page/page'
-import HotPage from '../pages/hot-page/page'
-import IcedPage from '../pages/iced-page/page'
-import BlendedPage from '../pages/blended-page/page'
-import MiscPage from '../pages/misc-page/page'
+'use client'
+import React, { useContext } from 'react'
 
-export default function CurrentPage({
-  setOrderInformation,
-  setDrinks,
-  setCurrentDrink,
-}) {
-  const [currentPage, setCurrentPage] = useState(0)
-  const [orderInformationSaved, setOrderInformationSaved] = useState(false)
+import CarPage from '../drinkPages/car-page/page'
+import FeaturedPage from '../drinkPages/featured-page/page'
+import HotPage from '../drinkPages/hot-page/page'
+import IcedPage from '../drinkPages/iced-page/page'
+import BlendedPage from '../drinkPages/blended-page/page'
+import MiscPage from '../drinkPages/misc-page/page'
 
-  const pages = [
-    'car-page',
-    'featured-page',
-    'hot-page',
-    'iced-page',
-    'blended-page',
-    'misc-page',
-  ]
-  switch (pages[currentPage]) {
+import { drinkPages } from '../drinkPages/drinkLib'
+
+import { PageContext } from '@/app/AppContext'
+
+export default function CurrentPage() {
+  const { currentPage } = useContext(PageContext)
+  switch (drinkPages[currentPage]) {
     case 'featured-page':
-      return (
-        <FeaturedPage
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          orderInformationSaved={orderInformationSaved}
-        />
-      )
+      return <FeaturedPage />
     case 'hot-page':
-      return (
-        <HotPage
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          orderInformationSaved={orderInformationSaved}
-        />
-      )
+      return <HotPage />
     case 'iced-page':
-      return (
-        <IcedPage
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          orderInformationSaved={orderInformationSaved}
-        />
-      )
+      return <IcedPage />
     case 'blended-page':
-      return (
-        <BlendedPage
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          orderInformationSaved={orderInformationSaved}
-        />
-      )
+      return <BlendedPage />
     case 'misc-page':
-      return (
-        <MiscPage
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          orderInformationSaved={orderInformationSaved}
-        />
-      )
+      return <MiscPage />
     default:
-      return (
-        <CarPage
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          orderInformationSaved={orderInformationSaved}
-          setOrderInformationSaved={setOrderInformationSaved}
-          setOrderInformation={setOrderInformation}
-        />
-      )
+      return <CarPage />
   }
 }
