@@ -8,7 +8,7 @@ import { OrderContext, PageContext } from './AppContext'
 export default function Home() {
   const [orderInformation, setOrderInformation] = useState({})
   const [drinks, setDrinks] = useState({})
-  const [currentDrink, setCurrentDrink] = useState()
+  const [currentDrink, setCurrentDrink] = useState({})
   const [currentPage, setCurrentPage] = useState(0)
   const [orderInformationSaved, setOrderInformationSaved] = useState(false)
 
