@@ -1,19 +1,23 @@
 'use client'
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 import SelectColor from './SelectColor'
 import SelectCar from './SelectCar'
 import SideBar from './SideBar'
 import PageTabs from '../../layout/PageTabs'
 import OrderInformation from './OrderInformation'
 
-export default function CarPage({
-  orderInformationSaved,
-  setOrderInformationSaved,
-  setOrderInformation,
-  currentPage,
-  setCurrentPage,
-  setCurrentDrink,
-}) {
+import { OrderContext, PageContext } from '@/app/AppContext'
+
+export default function CarPage() {
+  const { setOrderInformation, setCurrentDrink } = useContext(OrderContext)
+
+  const {
+    currentPage,
+    setCurrentPage,
+    orderInformationSaved,
+    setOrderInformationSaved,
+  } = useContext(PageContext)
+
   const [selectedColor, setSelectedColor] = useState(null)
   const [selectedCar, setSelectedCar] = useState(null)
   const commentRef = useRef(null)
@@ -48,23 +52,6 @@ export default function CarPage({
     }
   }
 
-  const colors = [
-    'White',
-    'Black',
-    'Gray',
-    'Silver',
-    'Red',
-    'Blue',
-    'Brown',
-    'Green',
-    'Gold',
-    'Purple',
-    'Orange',
-    'Custom',
-  ]
-
-  const cars = ['Car', 'SUV', 'Truck', 'Van', 'Wagon', 'Custom']
-
   return (
     <div className='bg-zinc-950 p-2 min-h-screen w-full'>
       <div className=''>
@@ -79,12 +66,10 @@ export default function CarPage({
           <div className='w-full bg-zinc-950'>
             <p className='text-lg text-gray-300 p-2'>Vehicle</p>
             <SelectColor
-              colors={colors}
               selectedColor={selectedColor}
               setSelectedColor={setSelectedColor}
             />
             <SelectCar
-              cars={cars}
               selectedCar={selectedCar}
               setSelectedCar={setSelectedCar}
             />

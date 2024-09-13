@@ -7,7 +7,7 @@ Dutch Bros Training is comprehensive but it needs a drink builder! Come here to 
 
 ## Features
 
-- 1:1 replica of the DutchBros Order Builder (mostly)
+- 1:1 replica of the DutchBros Order Builder
 - Built for Ipads like the original
 - Helps trainees develop good habits
 - Helps trainees learn the menu, take orders, and create drinks

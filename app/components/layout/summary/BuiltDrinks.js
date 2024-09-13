@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { OrderContext } from '@/app/AppContext'
+export default function BuiltDrinks() {
+  const { drinks, currentDrink, setCurrentDrink } = useContext(OrderContext)
 
-export default function BuiltDrinks({ drinks, currentDrink, setCurrentDrink }) {
   return <div className='p-2 flex flex-col gap-3'>drinks here</div>
 }

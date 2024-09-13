@@ -1,12 +1,13 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
 
-export default function PageTabs({
-  setCurrentPage,
-  currentPage,
-  orderInformationSaved,
-}) {
+import { PageContext } from '@/app/AppContext'
+
+export default function PageTabs() {
+  const { currentPage, setCurrentPage, orderInformationSaved } =
+    useContext(PageContext)
+
   const pages = ['Featured', 'Hot*', 'Iced*', 'Blended*', 'MISC.']
   const [error, setError] = useState('')
 
