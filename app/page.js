@@ -9,8 +9,10 @@ export default function Home() {
   const [orderInformation, setOrderInformation] = useState({})
   const [drinks, setDrinks] = useState({})
   const [currentDrink, setCurrentDrink] = useState({})
+  const [drinkSelected, setDrinkSelected] = useState(false)
   const [currentPage, setCurrentPage] = useState(0)
   const [orderInformationSaved, setOrderInformationSaved] = useState(false)
+  const [selectedDrink, setSelectedDrink] = useState(0)
 
   return (
     <main className='flex min-h-screen'>
@@ -22,6 +24,10 @@ export default function Home() {
           setDrinks,
           currentDrink,
           setCurrentDrink,
+          drinkSelected,
+          setDrinkSelected,
+          selectedDrink,
+          setSelectedDrink,
         }}
       >
         <Summary />

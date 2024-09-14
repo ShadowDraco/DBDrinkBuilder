@@ -2,17 +2,41 @@
 import React, { useState, useContext } from 'react'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
 
-import { PageContext } from '@/app/AppContext'
+import { OrderContext, PageContext } from '@/app/AppContext'
 
 export default function PageTabs() {
+  const {
+    setCurrentDrink,
+    drinks,
+    setDrinks,
+    drinkSelected,
+    setDrinkSelected,
+    setSelectedDrink,
+  } = useContext(OrderContext)
   const { currentPage, setCurrentPage, orderInformationSaved } =
     useContext(PageContext)
 
   const pages = ['Featured', 'Hot*', 'Iced*', 'Blended*', 'MISC.']
   const [error, setError] = useState('')
 
-  const saveOrderInformation = index => {
-    if (orderInformationSaved) {
+  const changePage = index => {
+    if (orderInformationSaved && drinkSelected == false) {
+      const newCurrentDrink = {
+        flavors: {},
+        sweet: {},
+        toppings: {},
+        temp: 5,
+        size: 1,
+        name: '',
+        base: { name: '', index: 1000 },
+        index: drinks.length,
+      }
+      setCurrentDrink(newCurrentDrink)
+      setDrinkSelected(true)
+      setDrinks([...drinks, newCurrentDrink])
+      setCurrentPage(index + 1)
+      setSelectedDrink(drinks.length)
+    } else if (orderInformationSaved) {
       setCurrentPage(index + 1)
       setError('')
     } else {
@@ -28,7 +52,7 @@ export default function PageTabs() {
             <button
               aria-current='page'
               onClick={() => {
-                saveOrderInformation(index)
+                changePage(index)
               }}
               className={`bg-transparent text-gray-300 font-semibold hover:text-gray-300 py-2 px-4 hover:bg-zinc-800 rounded 
                   ${currentPage == index + 1 ? 'border border-gray-300' : ''}

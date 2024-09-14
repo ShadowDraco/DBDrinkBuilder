@@ -1,5 +1,5 @@
 import React from 'react'
-import { carColors } from './CarInformation'
+import { carColors } from '../../../CarInformation'
 
 export default function SelectColor({ selectedColor, setSelectedColor }) {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import DrinkPage from '../DrinkPage'
-import { icedDrinks } from '../drinkLib'
+import { icedDrinks } from '../../../DrinkLib'
 
 export default function IcedPage() {
   return <DrinkPage drinksAndCategories={icedDrinks} />

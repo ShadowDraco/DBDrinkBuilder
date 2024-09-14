@@ -6,17 +6,15 @@ import SideBar from './SideBar'
 import PageTabs from '../../layout/PageTabs'
 import OrderInformation from './OrderInformation'
 
+import { emptyDrink } from '@/app/DrinkLib'
+
 import { OrderContext, PageContext } from '@/app/AppContext'
 
 export default function CarPage() {
-  const { setOrderInformation, setCurrentDrink } = useContext(OrderContext)
+  const { setOrderInformation, setCurrentDrink, setDrinks, setDrinkSelected } =
+    useContext(OrderContext)
 
-  const {
-    currentPage,
-    setCurrentPage,
-    orderInformationSaved,
-    setOrderInformationSaved,
-  } = useContext(PageContext)
+  const { setOrderInformationSaved } = useContext(PageContext)
 
   const [selectedColor, setSelectedColor] = useState(null)
   const [selectedCar, setSelectedCar] = useState(null)
@@ -38,14 +36,9 @@ export default function CarPage() {
       commentRef.current.value
     ) {
       setOrderInformationSaved(true)
-      setCurrentDrink({
-        flavors: {},
-        sweet: {},
-        toppings: {},
-        temp: 0,
-        size: 1,
-        name: '',
-      })
+      setDrinks([emptyDrink])
+      setCurrentDrink(emptyDrink)
+      setDrinkSelected(true)
       setError('')
     } else {
       setError('Add all info before saving!')
@@ -55,11 +48,7 @@ export default function CarPage() {
   return (
     <div className='bg-zinc-950 p-2 min-h-screen w-full'>
       <div className=''>
-        <PageTabs
-          setCurrentPage={setCurrentPage}
-          currentPage={currentPage}
-          orderInformationSaved={orderInformationSaved}
-        />
+        <PageTabs />
         <OrderInformation />
 
         <div className='flex'>
