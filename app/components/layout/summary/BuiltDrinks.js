@@ -19,6 +19,7 @@ export default function BuiltDrinks() {
       }`}
       onClick={() => {
         setDrinkSelected(false)
+        setCurrentDrink({})
       }}
     >
       <div className='flex flex-col gap-3'>
@@ -43,9 +44,11 @@ export default function BuiltDrinks() {
             )
           })}
       </div>
-      <p className='text-xs text-wrap text-balance'>
-        Tap in this area ^^ to start a new drink.
-      </p>
+      {drinkSelected && (
+        <p className='text-xs text-wrap text-balance'>
+          Tap in this area ^^ to start a new drink.
+        </p>
+      )}
     </div>
   )
 }
