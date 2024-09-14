@@ -1,10 +1,12 @@
 'use client'
 import React, { useState, useContext } from 'react'
 import { OrderContext } from '@/app/AppContext'
-export default function DrinkSizes() {
-  const { currentDrink, setCurrentDrink } = useContext(OrderContext)
+import { drinkSizes } from '../../DrinkLib'
 
-  const sizes = ['Small', 'Medium', 'Large', '8oz', 'Kids', '32oz']
+export default function DrinkSizes() {
+  const { drinks, setDrinks, currentDrink, setCurrentDrink } =
+    useContext(OrderContext)
+
   const [error, setError] = useState('')
   const [currentSize, setCurrentSize] = useState(currentDrink.size)
 
@@ -12,11 +14,15 @@ export default function DrinkSizes() {
     const newDrink = currentDrink
     newDrink.size = index
     setCurrentDrink(newDrink)
+
+    const newDrinks = drinks
+    newDrinks[newDrink.index] = newDrink
+    setDrinks([...newDrinks])
   }
 
   return (
     <ul className='p-2 flex flex-wrap w-full text-md gap-2 font-medium text-center bg-zinc-950 text-gray-300 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400'>
-      {sizes.map((size, index) => {
+      {drinkSizes.map((size, index) => {
         return (
           <li className='me-2 flex flex-1' key={`${size}-${index}`}>
             <button
