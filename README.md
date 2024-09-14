@@ -11,6 +11,8 @@ Dutch Bros Training is comprehensive but it needs a drink builder! Come here to 
 - Built for Ipads like the original
 - Helps trainees develop good habits
 - Helps trainees learn the menu, take orders, and create drinks
+- Build Multiple drinks
+- Mirrors original functionality
 - Easy URL
 - Beautiful UI
 - Has 0 APIS, Auth, and complications
