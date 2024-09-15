@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useContext } from 'react'
 import { OrderContext } from '@/app/AppContext'
-import { drinkSizes } from '../../DrinkLib'
+import { drinkSizeTabs } from '../../DrinkLib'
 
 export default function DrinkSizes() {
   const { drinks, setDrinks, currentDrink, setCurrentDrink } =
@@ -22,7 +22,7 @@ export default function DrinkSizes() {
 
   return (
     <ul className='p-2 flex flex-wrap w-full text-md gap-2 font-medium text-center bg-zinc-950 text-gray-300 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400'>
-      {drinkSizes.map((size, index) => {
+      {drinkSizeTabs.map((size, index) => {
         return (
           <li className='me-2 flex flex-1' key={`${size}-${index}`}>
             <button

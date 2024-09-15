@@ -4,7 +4,9 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
 
 import { OrderContext, PageContext } from '@/app/AppContext'
 
-export default function PageTabs() {
+import { drinkTypeTabs } from '@/app/DrinkLib'
+
+export default function DrinkPageTabs() {
   const {
     setCurrentDrink,
     drinks,
@@ -16,10 +18,9 @@ export default function PageTabs() {
   const { currentPage, setCurrentPage, orderInformationSaved } =
     useContext(PageContext)
 
-  const pages = ['Featured', 'Hot*', 'Iced*', 'Blended*', 'MISC.']
   const [error, setError] = useState('')
 
-  const changePage = index => {
+  const changeType = index => {
     if (orderInformationSaved && drinkSelected == false) {
       const newCurrentDrink = {
         flavors: {},
@@ -34,6 +35,7 @@ export default function PageTabs() {
       setCurrentDrink(newCurrentDrink)
       setDrinkSelected(true)
       setDrinks([...drinks, newCurrentDrink])
+      // +1 skips the car info page
       setCurrentPage(index + 1)
       setSelectedDrink(drinks.length)
     } else if (orderInformationSaved) {
@@ -46,19 +48,19 @@ export default function PageTabs() {
 
   return (
     <ul className='p-2 flex flex-wrap w-full text-md gap-2 font-medium text-center bg-zinc-950 text-gray-300 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400'>
-      {pages.map((page, index) => {
+      {drinkTypeTabs.map((type, index) => {
         return (
-          <li className='me-2 flex flex-1' key={`${page} ${index}`}>
+          <li className='me-2 flex flex-1' key={`${type} ${index}`}>
             <button
               aria-current='page'
               onClick={() => {
-                changePage(index)
+                changeType(index)
               }}
               className={`bg-transparent text-gray-300 font-semibold hover:text-gray-300 py-2 px-4 hover:bg-zinc-800 rounded 
                   ${currentPage == index + 1 ? 'border border-gray-300' : ''}
               `}
             >
-              {page}
+              {type}
             </button>
           </li>
         )
