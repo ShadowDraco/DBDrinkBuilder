@@ -3,7 +3,7 @@ import React, { useState, useRef, useContext } from 'react'
 import SelectColor from './SelectColor'
 import SelectCar from './SelectCar'
 import SideBar from './SideBar'
-import PageTabs from '../../layout/PageTabs'
+import PageTabs from '../../layout/DrinkTypes'
 import OrderInformation from './OrderInformation'
 
 import { emptyDrink } from '@/app/DrinkLib'

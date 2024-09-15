@@ -11,6 +11,12 @@ import MiscPage from '../drinkPages/misc-page/page'
 import { drinkPages } from '../../DrinkLib'
 
 import { PageContext } from '@/app/AppContext'
+import AllOptionsPage from '../drinkOptionPages/all-options-page/page'
+import MilkOptionsPage from '../drinkOptionPages/milk-options-page/page'
+import SweetOptionsPage from '../drinkOptionPages/sweet-options-page/page'
+import FlavorOptionsPage from '../drinkOptionPages/flavor-options-page/page'
+import ToppingOptionsPage from '../drinkOptionPages/topping-options-page/page'
+import FinisherOptionsPage from '../drinkOptionPages/finisher-options-page/page'
 
 export default function CurrentPage() {
   const { currentPage } = useContext(PageContext)
@@ -25,6 +31,18 @@ export default function CurrentPage() {
       return <BlendedPage />
     case 'misc-page':
       return <MiscPage />
+    case 'all-options-page':
+      return <AllOptionsPage />
+    case 'milk-options-page':
+      return <MilkOptionsPage />
+    case 'sweet-options-page':
+      return <SweetOptionsPage />
+    case 'flavor-options-page':
+      return <FlavorOptionsPage />
+    case 'topping-options-page':
+      return <ToppingOptionsPage />
+    case 'finisher-options-page':
+      return <FinisherOptionsPage />
     default:
       return <CarPage />
   }
