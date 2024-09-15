@@ -658,7 +658,7 @@ export const drinkBuilderThemes = {
     buttonClassName:
       'hover:from-purple-600 hover:to-gray-300 ease bg-gradient-to-br from-purple-500 to-gray-300',
   },
-  leaf: {
+  plant: {
     buttonClassName:
       'hover:from-green-600 hover:to-green-950 ease bg-gradient-to-br from-green-400 to-cyan-800',
   },

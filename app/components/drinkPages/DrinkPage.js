@@ -44,7 +44,7 @@ export default function DrinkPage({ drinksAndCategories }) {
             <div className='p-2'>
               {drinksAndCategories.map((category, index) => {
                 return (
-                  <div key={`${category.name}-${index}`}>
+                  <div key={`${category.name}-${index}`} className='my-5'>
                     <p>{category.name}</p>
                     <div className='grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 my-2'>
                       {category.drinks.map((drink, index) => {
