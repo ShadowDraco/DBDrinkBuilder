@@ -17,18 +17,18 @@ export default function OptionsPage({ optionsAndCategories }) {
     let newDrink = currentDrink
   }
   return (
-    <div className='bg-zinc-950 p-2 min-h-screen w-full'>
-      <div className=''>
-        <PageTabs />
+    <div className='flex'>
+      <div className='bg-zinc-950 p-2 w-full max-h-lvh overflow-y-scroll '>
+        <div className=''>
+          <PageTabs />
 
-        <div className='flex'>
           <div className='w-full bg-zinc-950'>
             <ModifierTabs />
 
             <div className='p-2'>
               {optionsAndCategories.map((category, index) => {
                 return (
-                  <div key={`${category.name}-${index}`}>
+                  <div key={`${category.name}-${index}`} >
                     <p>{category.name}</p>
                     <div className='grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 my-2'>
                       {category.options.map((option, index) => {
@@ -59,9 +59,11 @@ export default function OptionsPage({ optionsAndCategories }) {
                 )
               })}
             </div>
+
             <DrinkOptions />
           </div>
         </div>
+        <div className='bg-black w-full py-10 relative bottom-0'></div>
       </div>
     </div>
   )
