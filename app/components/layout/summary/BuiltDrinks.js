@@ -25,6 +25,12 @@ export default function BuiltDrinks() {
       <div className='flex flex-col gap-3'>
         {drinks.length > 0 &&
           drinks.map((drink, index) => {
+            const drinkSize = abbDrinkSizes[drink.size]
+            const drinkTemp = drinkTemps[drink.temp]
+            const hasMilk = drink.base.milk != '' || drink.milk != ''
+            const hasBase =
+              drink?.base?.name != '' && drink?.base?.index != 1000
+
             return (
               <div
                 onClick={event => {
@@ -38,8 +44,8 @@ export default function BuiltDrinks() {
                   selectedDrink == index ? 'border-2 border-white' : ''
                 }`}
               >
-                {abbDrinkSizes[drink.size]} {drinkTemps[drink.temp]}{' '}
-                {drink.name}
+                {hasMilk || hasBase ? drinkSize : ''}{' '}
+                {hasMilk || hasBase ? drinkTemp : ''} {drink.name}
               </div>
             )
           })}

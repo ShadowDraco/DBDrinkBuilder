@@ -24,37 +24,59 @@ export const drinkOptionTabs = [
 export const drinkTypeTabs = ['Featured', 'Hot*', 'Iced*', 'Blended*', 'MISC.']
 export const drinkSizeTabs = ['Small', 'Medium', 'Large', '8oz', 'Kids', '32oz']
 export const abbDrinkSizes = ['Sm', 'Md', 'Lg', '8oz', 'Kd', '32oz']
-export const drinkTemps = ['Hot', 'Iced', 'Blended', 'Warm', 'Extra Hot', '']
+export const milkTypes = [
+  'Nonfat Milk',
+  'Almond Milk',
+  'Coconut Milk',
+  'Almond Milk',
+  'Oat Milk',
+  '2% Milk',
+  'Chocolate Milk',
+  'Ice Cream',
+  'KickMe Milk',
+  'Protein Milk',
+  'Sweet Cream',
+]
+
+export const drinkTemps = [
+  'Hot',
+  'Iced',
+  'Blended',
+  'Warm',
+  'Extra Hot',
+  'Cold Pour',
+]
 
 export const emptyDrink = {
   flavors: {},
   sweet: {},
   toppings: {},
-  temp: 5,
+  temp: 6,
+  milk: '',
   size: 1,
   name: '',
-  base: { name: '', index: 1000 },
+  base: { name: '', index: 1000, milk: '' },
   index: 0,
 }
 
 export const dutchClassics = [
   { name: 'Americano' },
-  { name: 'Mocha' },
-  { name: 'Latte' },
-  { name: 'Breve' },
-  { name: 'Oat Milk Latte' },
+  { name: 'Mocha', milk: 6 },
+  { name: 'Latte', milk: 5 },
+  { name: 'Breve', milk: 8 },
+  { name: 'Oat Milk Latte', milk: 4 },
 ]
 
 export const dutchFaves = [
-  { name: 'Kicker' },
-  { name: 'Caramelizer' },
-  { name: 'Annihilator' },
-  { name: 'Golden Eagle' },
-  { name: 'Cocomo' },
-  { name: '911' },
-  { name: 'Double Torture' },
-  { name: 'White Mocha' },
-  { name: 'Vanilla Latte' },
+  { name: 'Kicker', milk: 8 },
+  { name: 'Caramelizer', milk: 6 },
+  { name: 'Annihilator', milk: 8 },
+  { name: 'Golden Eagle', milk: 8 },
+  { name: 'Cocomo', milk: 6 },
+  { name: '911', milk: 8 },
+  { name: 'Double Torture', milk: 6 },
+  { name: 'White Mocha', milk: 6 },
+  { name: 'Vanilla Latte', milk: 5 },
 ]
 
 export const dutchChais = [
@@ -85,7 +107,7 @@ export const hotDrinks = [
     name: 'Hot Classics*',
     theme: 'lava',
     temp: 0,
-    drinks: [...dutchClassics, { name: 'Hot Protein Latte', temp: 0 }],
+    drinks: [...dutchClassics, { name: 'Hot Protein Latte', temp: 0, milk: 5 }],
   },
   {
     name: 'Hot Dutch Faves',
@@ -93,9 +115,9 @@ export const hotDrinks = [
     temp: 0,
     drinks: [
       ...dutchFaves,
-      { name: 'Hot Salted Caramel Protein Latte', temp: 0 },
-      { name: 'Hot Salted Caramel Protein Mocha', temp: 0 },
-      { name: 'Hot Creamy Van Prot Latte', temp: 0 },
+      { name: 'Hot Salted Caramel Protein Latte', temp: 0, milk: 5 },
+      { name: 'Hot Salted Caramel Protein Mocha', temp: 0, milk: 6 },
+      { name: 'Hot Creamy Van Prot Latte', temp: 0, milk: 5 },
     ],
   },
   { name: 'Hot Chais', theme: 'pumpkin', temp: 0, drinks: [...dutchChais] },
@@ -106,7 +128,10 @@ export const icedDrinks = [
     name: 'Iced Classics*',
     theme: 'ice',
     temp: 1,
-    drinks: [...dutchClassics, { name: 'Iced Protein Latte', temp: 1 }],
+    drinks: [
+      ...dutchClassics,
+      { name: 'Iced Protein Latte', temp: 1, milk: 5 },
+    ],
   },
   {
     name: 'Iced Dutch Faves',
@@ -114,9 +139,9 @@ export const icedDrinks = [
     temp: 1,
     drinks: [
       ...dutchFaves,
-      { name: 'Iced Salted Caramel Protein Latte', temp: 1 },
-      { name: 'Iced Salted caramel Protein Mocha', temp: 1 },
-      { name: 'Iced Creamy Van Prot Latte', temp: 1 },
+      { name: 'Iced Salted Caramel Protein Latte', temp: 1, milk: 5 },
+      { name: 'Iced Salted caramel Protein Mocha', temp: 1, milk: 6 },
+      { name: 'Iced Creamy Van Prot Latte', temp: 1, milk: 5 },
     ],
   },
   {
@@ -134,7 +159,7 @@ export const blendedDrinks = [
     temp: 2,
     drinks: [
       { name: 'Dutch Freeze', temp: 2 },
-      { name: 'Mocha' },
+      { name: 'Mocha', milk: 6 },
       { name: 'Carburator' },
     ],
   },

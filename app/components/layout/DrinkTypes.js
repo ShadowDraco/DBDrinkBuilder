@@ -24,13 +24,22 @@ export default function DrinkPageTabs() {
     if (orderInformationSaved && drinkSelected == false) {
       const newCurrentDrink = {
         flavors: {},
-        sweet: {},
+        sweetness: {},
         toppings: {},
-        temp: 5,
+        temp: 0,
         size: 1,
         name: '',
-        base: { name: '', index: 1000 },
-        index: drinks.length,
+        milk: '',
+        base: {
+          name: '',
+          index: 1000,
+          milk: '',
+          flavors: {},
+          sweetness: {},
+          toppings: {},
+          temp: {},
+        },
+        index: 0,
       }
       setCurrentDrink(newCurrentDrink)
       setDrinkSelected(true)

@@ -3,12 +3,21 @@ import { createContext } from 'react'
 export const OrderContext = createContext({
   currentDrink: {
     flavors: {},
-    sweet: {},
+    sweetness: {},
     toppings: {},
     temp: 0,
     size: 1,
     name: '',
-    base: { name: '', index: 1000 },
+    milk: '',
+    base: {
+      name: '',
+      index: 1000,
+      milk: '',
+      flavors: {},
+      sweetness: {},
+      toppings: {},
+      temp: {},
+    },
     index: 0,
   },
   OrderInformation: { color: 0, car: 0, comment: '' },
