@@ -15,9 +15,8 @@ export default function DrinkPage({ drinksAndCategories }) {
   const updateCurrentDrink = (drink, category, index) => {
     let newDrink = currentDrink
     newDrink.name = drink.name
-    newDrink.milk = category.milk || ''
+    newDrink.milk = category.milk || drink.milk || ''
     newDrink.base = { name: drink.name, milk: drink.milk || '', index: index }
-    console.log(newDrink.milk)
     if (drink.temp != undefined) {
       newDrink.temp = drink.temp
     } else if (category.temp != undefined) {

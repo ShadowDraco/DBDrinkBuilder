@@ -32,7 +32,7 @@ export default function DrinkPageTabs() {
           temp: {},
           classic: {},
         },
-        temp: 0,
+        temp: 6,
         size: 1,
         name: '',
         milk: '',
@@ -46,8 +46,8 @@ export default function DrinkPageTabs() {
           espresso: {},
           temp: {},
         },
-        index: 0,
-      }
+        index: drinks.length,
+      } //! ^ Make sure drinks.length stays when updating current drink
       setCurrentDrink(newCurrentDrink)
       setDrinkSelected(true)
       setDrinks([...drinks, newCurrentDrink])

@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useContext } from 'react'
 import PageTabs from '../layout/DrinkTypes'
-import { drinkBuilderThemes } from '../../DrinkLib'
+import { drinkBuilderThemes, milkTypes } from '../../DrinkLib'
 import { OrderContext } from '@/app/AppContext'
 import DrinkOptions from '../layout/DrinkOptions'
 import ModifierTabs from './ModifierTabs'
@@ -25,6 +25,11 @@ export default function OptionsPage({ optionsAndCategories }) {
       if (increment == 'none' || !newDrink.options[optionType][optionName]) {
         newDrink.options[optionType] = {}
       }
+    }
+
+    // if option is milk or lemonade or tea, set it
+    if (optionType == 'milk') {
+      newDrink.milk = milkTypes[option.index]
     }
 
     // Create selected option if it doesn't exist
@@ -51,8 +56,7 @@ export default function OptionsPage({ optionsAndCategories }) {
           : (drinkOption.count = 1)
         break
     }
-
-    console.log(newDrink.options)
+    // update state
     setCurrentDrink(newDrink)
     const newDrinks = drinks
     drinks[newDrink.index] = newDrink

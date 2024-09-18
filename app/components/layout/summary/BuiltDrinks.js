@@ -33,19 +33,34 @@ export default function BuiltDrinks() {
 
             return (
               <div
+                key={`drink-${index}`}
                 onClick={event => {
                   setSelectedDrink(index)
                   setCurrentDrink(prevDrink => drinks[index])
                   setDrinkSelected(true)
                   event.stopPropagation()
                 }}
-                key={`drink-${index}`}
-                className={`bg-blue-500 text-white px-1 ${
-                  selectedDrink == index ? 'border-2 border-white' : ''
-                }`}
               >
-                {hasMilk || hasBase ? drinkSize : ''}{' '}
-                {hasMilk || hasBase ? drinkTemp : ''} {drink.name}
+                <div
+                  className={`bg-blue-500 text-white px-1 mb-2 ${
+                    selectedDrink == index ? 'border-2 border-white' : ''
+                  }`}
+                >
+                  {hasMilk || hasBase ? drinkSize : ''}{' '}
+                  {hasMilk && !hasBase ? drink.milk : ''}
+                  {hasMilk || hasBase ? drinkTemp : ''} {drink.name}
+                </div>
+                <div className='bg-zinc-1000'>
+                  {Object.values(drink.options).map((optionValue, i) => {
+                    return Object.values(optionValue).map((option, j) => {
+                      return (
+                        <div key={`${option.name}-${i}-${j}`}>
+                          {option.count} {option.name}
+                        </div>
+                      )
+                    })
+                  })}
+                </div>
               </div>
             )
           })}
