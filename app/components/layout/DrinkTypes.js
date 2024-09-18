@@ -23,9 +23,14 @@ export default function DrinkPageTabs() {
   const changeType = index => {
     if (orderInformationSaved && drinkSelected == false) {
       const newCurrentDrink = {
-        flavors: {},
-        sweetness: {},
-        toppings: {},
+        options: {
+          flavors: {},
+          sweetness: {},
+          toppings: {},
+          espresso: {},
+          milk: {},
+          temp: {},
+        },
         temp: 0,
         size: 1,
         name: '',
@@ -37,6 +42,7 @@ export default function DrinkPageTabs() {
           flavors: {},
           sweetness: {},
           toppings: {},
+          espresso: {},
           temp: {},
         },
         index: 0,

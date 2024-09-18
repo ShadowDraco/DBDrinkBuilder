@@ -25,10 +25,6 @@ export default function DrinkPage({ drinksAndCategories }) {
     } else {
       newDrink.temp = 6
     }
-
-    console.log(newDrink)
-
-    // TODO - add default sweet, flavor, toppings, etc
     setCurrentDrink(newDrink)
 
     const newDrinks = drinks
