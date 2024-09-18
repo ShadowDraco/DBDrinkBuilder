@@ -23,15 +23,31 @@ export default function DrinkPageTabs() {
   const changeType = index => {
     if (orderInformationSaved && drinkSelected == false) {
       const newCurrentDrink = {
-        flavors: {},
-        sweet: {},
-        toppings: {},
-        temp: 5,
+        options: {
+          flavors: {},
+          sweetness: {},
+          toppings: {},
+          espresso: {},
+          milk: {},
+          temp: {},
+          classic: {},
+        },
+        temp: 6,
         size: 1,
         name: '',
-        base: { name: '', index: 1000 },
+        milk: '',
+        base: {
+          name: '',
+          index: 1000,
+          milk: '',
+          flavors: {},
+          sweetness: {},
+          toppings: {},
+          espresso: {},
+          temp: {},
+        },
         index: drinks.length,
-      }
+      } //! ^ Make sure drinks.length stays when updating current drink
       setCurrentDrink(newCurrentDrink)
       setDrinkSelected(true)
       setDrinks([...drinks, newCurrentDrink])

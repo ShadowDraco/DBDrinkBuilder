@@ -1,7 +1,5 @@
 'use client'
 import React, { useState, useContext } from 'react'
-import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
-
 import { OrderContext, PageContext } from '@/app/AppContext'
 
 import { drinkOptionTabs } from '@/app/DrinkLib'
@@ -21,7 +19,6 @@ export default function DrinkOptionTabs() {
   const [error, setError] = useState('')
 
   const changePage = index => {
-    console.log(orderInformationSaved, drinkSelected)
     if (orderInformationSaved && drinkSelected) {
       // + 6 skips the normal page types and goes to option page types
       setCurrentPage(index + 6)
