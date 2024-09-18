@@ -24,7 +24,6 @@ export default function OptionsPage({ optionsAndCategories }) {
       // in the case that only one option has an increment like extra sweet vs. 1/4 sweet
       if (increment == 'none' || !newDrink.options[optionType][optionName]) {
         newDrink.options[optionType] = {}
-        console.log(newDrink.options)
       }
     }
 
@@ -53,11 +52,12 @@ export default function OptionsPage({ optionsAndCategories }) {
         break
     }
 
+    console.log(newDrink.options)
     setCurrentDrink(newDrink)
     const newDrinks = drinks
     drinks[newDrink.index] = newDrink
-    setDrinks(newDrinks)
-    setCurrentOptions(currentDrink.options)
+    setDrinks([...newDrinks])
+    setCurrentOptions({ ...newDrink.options })
   }
   return (
     <div className='flex'>
@@ -75,10 +75,13 @@ export default function OptionsPage({ optionsAndCategories }) {
                     <p>{category.name}</p>
                     <div className='grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 my-2'>
                       {category.options.map((option, index) => {
-                        const optionType = option.optionType
-                        const optionName = option.name.replace(' ', '-')
-                        const optionCount =
-                          currentOptions[optionType][optionName]?.count || 0
+                        const optionType = option?.optionType
+                        const optionName = option?.name?.replace(' ', '-')
+                        const optionCount = currentOptions[optionType][
+                          optionName
+                        ]
+                          ? currentOptions[optionType][optionName].count
+                          : 0
 
                         return (
                           <div key={`${option}-${index}`} className=''>

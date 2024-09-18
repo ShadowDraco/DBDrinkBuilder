@@ -57,6 +57,7 @@ export const emptyDrink = {
     espresso: {},
     milk: {},
     temp: {},
+    classic: {},
   },
   temp: 0,
   size: 1,
