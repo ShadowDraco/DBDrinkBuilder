@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { OrderContext, PageContext } from '@/app/AppContext'
+import { OrderContext } from '@/app/AppContext'
 import { abbDrinkSizes, drinkTemps } from '../../../DrinkLib'
 
 export default function BuiltDrinks() {
@@ -11,7 +11,7 @@ export default function BuiltDrinks() {
     selectedDrink,
     setSelectedDrink,
   } = useContext(OrderContext)
-  const { setCurrentPage } = useContext(PageContext)
+
   return (
     <div
       className={`p-2 flex flex-col flex-1 gap-3 justify-between pb-5 h-full ${
@@ -37,7 +37,6 @@ export default function BuiltDrinks() {
                 onClick={event => {
                   setSelectedDrink(index)
                   setCurrentDrink(prevDrink => drinks[index])
-
                   setDrinkSelected(true)
                   event.stopPropagation()
                 }}
