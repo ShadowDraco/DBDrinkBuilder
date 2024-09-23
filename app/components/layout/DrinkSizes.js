@@ -4,7 +4,7 @@ import { OrderContext } from '@/app/AppContext'
 import { drinkSizeTabs } from '../../DrinkLib'
 
 export default function DrinkSizes() {
-  const { drinks, setDrinks, currentDrink, setCurrentDrink } =
+  const { drinks, setDrinks, currentDrink, setCurrentDrink, drinkSelected } =
     useContext(OrderContext)
 
   const [error, setError] = useState('')
@@ -29,7 +29,12 @@ export default function DrinkSizes() {
               aria-current='page'
               onClick={() => {
                 updateCurrentDrink(index)
-                setCurrentSize(index)
+                if (drinkSelected) {
+                  setCurrentSize(index)
+                  setError('')
+                } else {
+                  setError('Select a drink first')
+                }
               }}
               className={`bg-transparent text-gray-300 font-semibold hover:text-gray-300 py-2 px-4 hover:bg-zinc-800 rounded 
                   ${currentSize == index ? 'border border-gray-300' : ''}
