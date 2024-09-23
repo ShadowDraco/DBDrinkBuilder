@@ -143,7 +143,6 @@ export default function OptionsPage({ optionsAndCategories }) {
             <DrinkOptions />
           </div>
         </div>
-        <div className='bg-black w-full py-10 relative bottom-0'></div>
       </div>
     </div>
   )

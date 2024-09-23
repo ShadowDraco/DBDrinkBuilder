@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-   --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 body {
@@ -29,6 +29,9 @@ body {
 }
 .bg-gray-800 {
   background-color: rgb(58, 58, 58);
+}
+.bg-brown-5000 {
+  background-color: rgb(168, 115, 16);
 }
 .border-white-5000 {
   border-color: white;

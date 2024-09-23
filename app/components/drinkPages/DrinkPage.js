@@ -9,6 +9,7 @@ import DrinkOptions from '../layout/DrinkOptions'
 export default function DrinkPage({ drinksAndCategories }) {
   const { drinks, setDrinks, currentDrink, setCurrentDrink } =
     useContext(OrderContext)
+
   const [error, setError] = useState('')
   const [currentBase, setCurrentBase] = useState(currentDrink.base)
 

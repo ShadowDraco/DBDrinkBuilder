@@ -105,15 +105,41 @@ export const dutchChais = [
 
 export const featuredDrinks = [
   {
-    name: 'Seasonal',
+    name: 'Caramel Pumpkin Brulee',
+    theme: 'beach',
+    drinks: [
+      { name: 'Hot CPB Breve', temp: 0, milk: 7 },
+      { name: 'Iced CPB Breve', temp: 1, milk: 7 },
+      { name: 'CPB Cold Brew', temp: 1, milk: 4 },
+      { name: 'Nitro CPB', temp: 1 },
+      { name: 'Toasted CPB Cold Brew', temp: 0 },
+      { name: 'Toasted Nitro Campout CPB', temp: 0 },
+      { name: 'CPB Freeze', temp: 2 },
+      { name: 'CPB Shake', temp: 3 },
+      { name: 'Hot CPB Chai', temp: 0, milk: 4 },
+      { name: 'Iced CPB Chai', temp: 1, milk: 4 },
+      { name: 'Blended CPB Chai', temp: 2, milk: 4 },
+    ],
+  },
+  {
+    name: 'Cinnamon Roll',
+    theme: 'cinnamon',
+    drinks: [
+      { name: 'Hot Cinn Roll Breve', temp: 0, milk: 7 },
+      { name: 'Iced Cinn Roll Breve', temp: 1, milk: 7 },
+      { name: 'Cinn Roll Freeze', temp: 2 },
+    ],
+  },
+  {
+    name: 'Cookie Butter',
     theme: 'autumn',
     drinks: [
-      { name: 'CPB Americano', temp: 1 },
-      { name: 'CPB Mocha', temp: 1 },
-      { name: 'CPB Latte', temp: 1 },
-      { name: 'CPB Breve', temp: 1 },
-      { name: 'CPB Oat Milk Latte', temp: 1 },
-      { name: 'CPB Hot Protein Latte', temp: 1 },
+      { name: 'Hot Cookie Butter Latte', temp: 0, milk: 4 },
+      { name: 'Iced Cookie Butter Latte', temp: 1, milk: 4 },
+      { name: 'Cookie Butter Freeze', temp: 2 },
+      { name: 'Hot Cookie Butter Chai', temp: 0, milk: 4 },
+      { name: 'Iced Cookie Butter Chai', temp: 1, milk: 4 },
+      { name: 'Hot Cookie Butter...', temp: 0, milk: 0 },
     ],
   },
 ]
@@ -320,7 +346,7 @@ export const milkOptions = [
   {
     name: 'Alternative Milks',
     theme: 'water',
-    onlyOne: true,
+    onlyOne: false,
     options: [
       {
         name: 'Nonfat',
@@ -466,6 +492,96 @@ export const sweetOptions = [
 ]
 
 export const flavorOptions = [
+  {
+    name: 'Fruit Flavors',
+    theme: 'lime',
+    onlyOne: false,
+    options: [
+      {
+        name: 'Strawberry',
+        count: 0,
+        incremental: false,
+        optionType: 'flavors',
+      },
+      { name: 'Peach', count: 0, incremental: false, optionType: 'flavors' },
+      {
+        name: 'Blue Razz',
+        count: 0,
+        incremental: false,
+        optionType: 'flavors',
+      },
+      { name: 'Pom', count: 0, incremental: false, optionType: 'flavors' },
+      { name: 'Red Raz', count: 0, incremental: false, optionType: 'flavors' },
+      {
+        name: 'Passion Fruit',
+        count: 0,
+        incremental: false,
+        optionType: 'flavors',
+      },
+      {
+        name: 'Watermelon',
+        count: 0,
+        incremental: false,
+        optionType: 'flavors',
+      },
+      {
+        name: 'Black Berry',
+        count: 0,
+        incremental: false,
+        optionType: 'flavors',
+      },
+      { name: 'Orange', count: 0, incremental: false, optionType: 'flavors' },
+      { name: 'Lime', count: 0, incremental: false, optionType: 'flavors' },
+      {
+        name: 'Almond (Orgeat)',
+        count: 0,
+        incremental: false,
+        optionType: 'flavors',
+      },
+      { name: 'Banana', count: 0, incremental: false, optionType: 'flavors' },
+      { name: 'Kiwi', count: 0, incremental: false, optionType: 'flavors' },
+      {
+        name: 'Grapefruit',
+        count: 0,
+        incremental: false,
+        optionType: 'flavors',
+      },
+      { name: 'Coconut', count: 0, incremental: false, optionType: 'flavors' },
+      {
+        name: 'Lemon Conc.',
+        count: 0,
+        incremental: false,
+        optionType: 'flavors',
+      },
+      {
+        name: 'Pineapple',
+        count: 0,
+        incremental: false,
+        optionType: 'flavors',
+      },
+      {
+        name: 'Mngonada',
+        disabled: true,
+        count: 0,
+        incremental: false,
+        optionType: 'flavors',
+      },
+      {
+        name: 'Sour Candy',
+        disabled: true,
+        count: 0,
+        incremental: false,
+        optionType: 'flavors',
+      },
+      {
+        name: 'Green Apple',
+        count: 0,
+        incremental: false,
+        optionType: 'flavors',
+      },
+    ],
+  },
+
   {
     name: 'Non Fruit Flavors',
     theme: 'water',
@@ -783,6 +899,13 @@ export const drinkBuilderThemes = {
   autumn: {
     buttonClassName:
       'hover:from-yellow-600 hover:to-orange-600 ease bg-gradient-to-br from-yellow-500 to-orange-500',
+  },
+  cinnamon: {
+    buttonClassName: 'hover:bg-brown-5000 ease bg-brown-5000',
+  },
+  beach: {
+    buttonClassName:
+      'hover:from-cyan-300 hover:to-yellow-600 ease bg-gradient-to-b from-cyan-400 to-yellow-500',
   },
   pumpkin: {
     buttonClassName: 'bg-orange-600 hover:bg-orange-700',
