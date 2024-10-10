@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { OrderContext } from '@/app/AppContext'
-import { abbDrinkSizes, drinkTemps } from '../../../DrinkLib'
+import { abbDrinkSizes, drinkTemps } from '../../../lib/DrinkLib'
 
 export default function BuiltDrinks() {
   const {

@@ -2,7 +2,7 @@
 import React, { useState, useContext } from 'react'
 import { OrderContext, PageContext } from '@/app/AppContext'
 
-import { drinkOptionTabs } from '@/app/DrinkLib'
+import { drinkOptionTabs } from '@/app/lib/DrinkLib'
 
 export default function DrinkOptionTabs() {
   const {

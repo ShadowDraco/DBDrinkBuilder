@@ -46,37 +46,6 @@ export const drinkTemps = [
   'Cold Pour',
 ]
 
-export const emptyOrderInformation = { color: 0, car: 0, comment: '' }
-
-export const emptyDrink = {
-  options: {
-    flavors: {},
-    sweetness: {},
-    toppings: {},
-    espresso: {},
-    milk: {},
-    temp: {},
-    classic: {},
-  },
-  temp: 6,
-  size: 1,
-  name: '',
-  milk: '',
-  count: 1,
-  price: 0.0,
-  base: {
-    name: '',
-    index: 1000,
-    milk: '',
-    flavors: {},
-    sweetness: {},
-    toppings: {},
-    espresso: {},
-    temp: {},
-  },
-  index: 0,
-}
-
 export const dutchClassics = [
   { name: 'Americano' },
   { name: 'Mocha', milk: 6 },

@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { emptyDrink, emptyOrderInformation } from './DrinkLib'
+import { emptyDrink, emptyOrderInformation } from './lib/DrinkLib'
 export const OrderContext = createContext({
   currentDrink: emptyDrink,
   OrderInformation: emptyOrderInformation,

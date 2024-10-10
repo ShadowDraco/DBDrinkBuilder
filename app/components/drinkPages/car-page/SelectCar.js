@@ -1,5 +1,5 @@
 import React from 'react'
-import { carIcons, cars } from '../../../CarInformation'
+import { carIcons, cars } from '../../../lib/CarInformation'
 
 export default function SelectCar({ selectedCar, setSelectedCar }) {
   return (

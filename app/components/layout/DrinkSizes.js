@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useContext } from 'react'
 import { OrderContext } from '@/app/AppContext'
-import { drinkSizeTabs } from '../../DrinkLib'
+import { drinkSizeTabs } from '../../lib/DrinkLib'
 
 export default function DrinkSizes() {
   const { drinks, setDrinks, currentDrink, setCurrentDrink, drinkSelected } =

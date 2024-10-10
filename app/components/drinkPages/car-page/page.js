@@ -6,7 +6,7 @@ import SideBar from './SideBar'
 import PageTabs from '../../layout/DrinkTypes'
 import OrderInformation from './OrderInformation'
 
-import { emptyDrink } from '@/app/DrinkLib'
+import { emptyDrink } from '@/app/lib/DrinkLib'
 
 import { OrderContext, PageContext } from '@/app/AppContext'
 

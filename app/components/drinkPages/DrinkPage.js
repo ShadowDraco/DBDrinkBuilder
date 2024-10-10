@@ -2,7 +2,7 @@
 import React, { useState, useContext } from 'react'
 import PageTabs from '../layout/DrinkTypes'
 import DrinkSizes from '../layout/DrinkSizes'
-import { drinkBuilderThemes } from '../../DrinkLib'
+import { drinkBuilderThemes } from '../../lib/DrinkLib'
 import { OrderContext, PageContext } from '@/app/AppContext'
 import DrinkOptions from '../layout/DrinkOptions'
 

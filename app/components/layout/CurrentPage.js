@@ -8,7 +8,7 @@ import IcedPage from '../drinkPages/iced-page/page'
 import BlendedPage from '../drinkPages/blended-page/page'
 import MiscPage from '../drinkPages/misc-page/page'
 
-import { drinkPages } from '../../DrinkLib'
+import { drinkPages } from '../../lib/DrinkLib'
 
 import { PageContext } from '@/app/AppContext'
 import AllOptionsPage from '../drinkOptionPages/all-options-page/page'

@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useContext } from 'react'
 import PageTabs from '../layout/DrinkTypes'
-import { drinkBuilderThemes, milkTypes } from '../../DrinkLib'
+import { drinkBuilderThemes, milkTypes } from '../../lib/DrinkLib'
 import { OrderContext } from '@/app/AppContext'
 import DrinkOptions from '../layout/DrinkOptions'
 import ModifierTabs from './ModifierTabs'

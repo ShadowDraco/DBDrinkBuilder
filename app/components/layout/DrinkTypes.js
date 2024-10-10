@@ -4,7 +4,7 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
 
 import { OrderContext, PageContext } from '@/app/AppContext'
 
-import { drinkTypeTabs } from '@/app/DrinkLib'
+import { drinkTypeTabs } from '@/app/lib/DrinkLib'
 
 export default function DrinkPageTabs() {
   const {
