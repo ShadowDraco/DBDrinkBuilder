@@ -38,4 +38,32 @@ export default class Drink {
     this.base = base
     this.index = index
   }
+
+  changeTemp(temp = 6) {
+    this.temp = temp
+  }
+
+  changeSize(size = 1) {
+    this.size = size
+  }
+
+  changeName(name = '') {
+    this.name = name
+  }
+
+  changeCount(count = 1) {
+    this.count = count
+  }
+
+  addPrice(amount = 0.0) {
+    this.price += amount
+  }
+
+  changePrice(price = 0.0) {
+    this.price = price
+  }
+
+  changeBase(base = {}) {
+    this.base = base
+  }
 }

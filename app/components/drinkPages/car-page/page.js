@@ -6,15 +6,11 @@ import SideBar from './SideBar'
 import PageTabs from '../../layout/DrinkTypes'
 import OrderInformation from './OrderInformation'
 
-import { emptyDrink } from '@/app/lib/DrinkLib'
-
 import { OrderContext, PageContext } from '@/app/AppContext'
 
 export default function CarPage() {
-  const { setOrderInformation, setCurrentDrink, setDrinks, setDrinkSelected } =
+  const { orders, currentOrder, currentTray, setCurrentDrink, setDrinkSelected } =
     useContext(OrderContext)
-
-  const { setOrderInformationSaved } = useContext(PageContext)
 
   const [selectedColor, setSelectedColor] = useState(null)
   const [selectedCar, setSelectedCar] = useState(null)
@@ -24,20 +20,16 @@ export default function CarPage() {
 
   const updateOrderInformation = () => {
     setComment(commentRef.current.value)
-    setOrderInformation({
-      color: selectedColor,
-      car: selectedCar,
-      comment: commentRef.current.Value,
-    })
-
+    currentOrder.color = selectedColor
+    currentOrder.car = selectedCar
+    currentOrder.comment = commentRef.currentValue
     if (
       selectedColor != null &&
       selectedCar != null &&
       commentRef.current.value
     ) {
-      setOrderInformationSaved(true)
-      setDrinks([emptyDrink])
-      setCurrentDrink(emptyDrink)
+      currentOrder.saveInformation()
+      setCurrentDrink(currentOrder.currentTray.currentDrink)
       setDrinkSelected(true)
       setError('')
     } else {
