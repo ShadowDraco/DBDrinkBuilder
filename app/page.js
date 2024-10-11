@@ -30,19 +30,19 @@ export default function Home() {
           setSelectedDrink,
         }}
       >
-        <Summary />
-        <div className='w-full h-full bg-zinc-950'>
-          <PageContext.Provider
-            value={{
-              currentPage,
-              setCurrentPage,
-              orderInformationSaved,
-              setOrderInformationSaved,
-            }}
-          >
+        <PageContext.Provider
+          value={{
+            currentPage,
+            setCurrentPage,
+            orderInformationSaved,
+            setOrderInformationSaved,
+          }}
+        >
+          <Summary />
+          <div className='w-full h-full bg-zinc-950'>
             <CurrentPage />
-          </PageContext.Provider>
-        </div>
+          </div>
+        </PageContext.Provider>
       </OrderContext.Provider>
     </main>
   )

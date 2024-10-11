@@ -1,17 +1,20 @@
-import React, { useState } from 'react'
+'use client'
+
+import React, { useContext, useState } from 'react'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { ChevronUpIcon } from '@heroicons/react/24/solid'
+import { PageContext } from '@/app/AppContext'
 
 const total = '$0.00'
 const options = [
-  { id: 0, name: '1' },
-  { id: 1, name: '2' },
+  { id: 0, name: 'Order Information' },
+  { id: 1, name: 'Discounts' },
   { id: 2, name: '3' },
   { id: 3, name: '4' },
 ]
 
 export default function BottomSummary() {
-  const [selectedOption, setSelectedOption] = useState(options[0])
+  const { setCurrentPage } = useContext(PageContext)
 
   return (
     <div className='bottomSummary w-full bg-zinc-900 pt-2 border-t-2 border-black'>
@@ -42,7 +45,16 @@ export default function BottomSummary() {
                   <MenuItem key={`${option.name}-${option.id}`}>
                     <div
                       onClick={() => {
-                        setSelectedOption(options[option.id])
+                        switch (option.id) {
+                          case 0:
+                            setCurrentPage(0)
+                            break
+                          case 1:
+                            setCurrentPage(0)
+                            break
+                          default:
+                            break
+                        }
                       }}
                       className='block px-4 py-2 text-sm text-gray-300 data-[focus]:bg-gray-800 data-[focus]:text-gray-300'
                     >
