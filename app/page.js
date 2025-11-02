@@ -14,6 +14,18 @@ export default function Home() {
   const [orderInformationSaved, setOrderInformationSaved] = useState(false)
   const [selectedDrink, setSelectedDrink] = useState(0)
 
+  const submitOrder = () => {
+
+    // await sendOrderToKitchen()
+    setCurrentPage('car-page')
+    setOrderInformation({})
+    setDrinks({})
+    setCurrentDrink({})
+    setDrinkSelected(false)
+    setOrderInformationSaved(false)
+    setSelectedDrink(0)
+  }
+
   return (
     <main className='flex min-h-screen'>
       <OrderContext.Provider
@@ -28,6 +40,7 @@ export default function Home() {
           setDrinkSelected,
           selectedDrink,
           setSelectedDrink,
+          submitOrder
         }}
       >
         <Summary />

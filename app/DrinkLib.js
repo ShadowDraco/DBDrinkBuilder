@@ -41,7 +41,7 @@ export const drinkTemps = [
   'Hot',
   'Iced',
   'Blended',
-  'Warm',
+  'Not So Hot',
   'Extra Hot',
   'Cold Pour',
 ]
