@@ -7,7 +7,7 @@ export default function Author() {
         Web Services by<br></br>
         <Link
           target='_blank'
-          href='https://github.com/shadowdraco'
+          href='https://stormcodes.com'
           className='text-cyan-200'
         >
           Ethan Storm

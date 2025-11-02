@@ -4,10 +4,10 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, ChevronDownIcon } from '@heroicons/react/24/solid'
 
 const people = [
-  { id: 0, name: 'Patty Gregson' },
-  { id: 1, name: 'AJ Woodruff' },
-  { id: 2, name: 'Tristen Hursey' },
-  { id: 3, name: 'Ethan Z' },
+  { id: 0, name: 'Patty' },
+  { id: 1, name: 'AJ' },
+  { id: 2, name: 'Tristen' },
+  { id: 3, name: 'Ethan' },
 ]
 
 export default function TopSummary() {
